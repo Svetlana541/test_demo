@@ -12,6 +12,7 @@ test-job:
   stage: test
   script:
     - echo "test"
+    
 deploy-job:
   stage: deploy
   environment: production
