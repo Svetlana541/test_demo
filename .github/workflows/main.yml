@@ -1,4 +1,4 @@
-name: github-actions
+name: demo-workflow
 on: workflow_dispatch
 jobs:
   print:
@@ -6,3 +6,7 @@ jobs:
     steps:
       - name: Print to console
         run: echo Hello, world!
+      - name: Print a few lines
+        run: |
+          echo First line!
+          echo Second line!
