@@ -1,12 +1,10 @@
 name: demo-workflow
-on: workflow_dispatch
+on: push
 jobs:
   print:
     runs-on: ubuntu-latest
     steps:
       - name: Print to console
         run: echo Hello, world!
-      - name: Print a few lines
-        run: |
-          echo First line!
-          echo Second line!
+      - name: Get repository code
+        run: actions/checkout@v4
