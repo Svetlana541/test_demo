@@ -4,7 +4,4 @@ jobs:
   print:
     runs-on: ubuntu-latest
     steps:
-      - name: Print to console
-        run: echo Hello, world!
-      - name: Get repository code
-        run: actions/checkout@v4
+    - run: echo Hello, world!
