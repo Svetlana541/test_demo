@@ -13,11 +13,5 @@ jobs:
       - name: Build Docker image
         run: docker build -t my-app .
 
-      - name: Run tests 
-        run: echo "test successful (simulation)"
-
-      - name: Check Docker Compose version
-        run: docker compose version
-
       - name: Deploy (simulate)
-        run: docker compose up -d
+        run: docker compose up --build -d
