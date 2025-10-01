@@ -1,7 +1,11 @@
-name: demo-workflow
+name: My first CI/CD pipline
+
 on: push
+
 jobs:
   print:
-    runs-on: ubuntulatest
+    runs-on: ubuntu-latest
+
     steps:
-    - run: echo Hello, world!
+      - name: Print hello
+        run: echo Hello, world!
