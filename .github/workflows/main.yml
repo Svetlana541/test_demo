@@ -2,6 +2,6 @@ name: demo-workflow
 on: push
 jobs:
   print:
-    runs-on: ubuntu-latest
+    runs-on: ubuntulatest
     steps:
     - run: echo Hello, world!
