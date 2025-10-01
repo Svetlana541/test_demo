@@ -16,5 +16,8 @@ jobs:
       - name: Run tests 
         run: echo "test successful (simulation)"
 
+      - name: Check Docker Compose version
+        run: docker compose versio
+
       - name: Deploy (simulate)
-        run: docker-compose up -d
+        run: docker compose up -d
