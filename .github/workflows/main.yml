@@ -1,7 +1,6 @@
 name: CI/CD with Docker
 
-on:
-  push: [push]
+on: [push]
 
 jobs:
   ci-cd:
