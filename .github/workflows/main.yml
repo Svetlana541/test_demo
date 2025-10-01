@@ -17,4 +17,4 @@ jobs:
         run: echo "test successful (simulation)"
 
       - name: Deploy (simulate)
-        run: echo "Deploy successful (simulation)"
+        run: docker-compose up -d
