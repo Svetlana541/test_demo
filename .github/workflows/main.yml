@@ -1,11 +1,21 @@
-name: My first CI/CD pipeline # Имя рабочего процесса
+name: CI/CD with Docker
 
-on: [push] # Пайплайн запустится по событию 'push' 
+on:
+  push: [push]
 
-jobs: 
-  print: # Название job’ы 
-    runs-on: ubuntu-latest # Тип виртуальной машины
+jobs:
+  ci-cd:
+    runs-on: ubuntu-latest
 
-    steps: # Шаги
-      - name: Print hello # Название действия
-        run: echo "Hello, world!" # Действие (вывод на экран фразы)
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build Docker image
+        run: docker build -t my-app .
+
+      - name: Run tests 
+        run: echo "test successful (simulation)"
+
+      - name: Deploy (simulate)
+        run: echo "Deploy successful (simulation)"
