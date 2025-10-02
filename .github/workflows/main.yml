@@ -13,12 +13,12 @@ jobs:
       - name: Build Docker image
         run: docker build -t my-app .
 
-      - name: run tests
+      - name: Run tests
         run: |
           pip install pytest
           pytest -v
 
-      - name: Deploy (simulate)
+      - name: Print result
         run: docker run --rm my-app 
 
 
