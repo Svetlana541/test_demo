@@ -25,13 +25,19 @@ jobs:
 
       - name: run tests
         run: |
-          pip install pytest
-          pytest -v
+          docker build -t my-app .
+          docker run --rm my-app pytest -v 
 
   deploy:
     runs-on: ubuntu-latest
     needs: test
 
     steps:
-      - name: Deploy (simulate)
-        run: echo "Deploy successful (simulation)"
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
