@@ -3,7 +3,7 @@ name: CI/CD with Docker
 on: [push]
 
 jobs:
-  build:
+  workflow:
     runs-on: ubuntu-latest
 
     steps:
@@ -22,9 +22,3 @@ jobs:
         run: docker run --rm my-app 
 
 
-
-
-
-
-
-# должна иметь раннер и включать в себя 4 шага
