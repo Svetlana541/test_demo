@@ -7,7 +7,5 @@ WORKDIR /app
 # Копируем наш код внутрь контейнера
 COPY app.py .
 
-# RUN install pytest
-
 # CMD — запускается при старте контейнера
 CMD ["python", "app.py"]
