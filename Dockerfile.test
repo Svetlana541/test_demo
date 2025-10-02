@@ -1,0 +1,5 @@
+FROM my-app
+
+RUN install pytest
+
+CMD ["pytest", "-v"]

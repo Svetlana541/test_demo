@@ -15,11 +15,23 @@ jobs:
           docker build -t my-app .
           docker run --rm my-app
 
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: run tests
         run: |
-          pip install pytest
-          pytest -v
+          docker build -t my-app -f Dockerfile.test .
+          docker run --rm my-app 
 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
       - name: Deploy (simulate)
         run: echo "Deploy successful (simulation)"
-
