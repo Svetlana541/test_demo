@@ -25,8 +25,8 @@ jobs:
 
       - name: run tests
         run: |
-          docker build -t my-app .
-          docker run --rm my-app pytest -v 
+          pip install pytest
+          pytest -v
 
   deploy:
     runs-on: ubuntu-latest
