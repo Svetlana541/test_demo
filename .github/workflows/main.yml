@@ -13,7 +13,6 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t my-app .
-          docker run --rm my-app
 
   test:
     runs-on: ubuntu-latest
@@ -25,8 +24,8 @@ jobs:
 
       - name: run tests
         run: |
-          docker build -t my-app -f Dockerfile.test .
-          docker run --rm my-app 
+          pip install pytest
+          pytest -v
 
   deploy:
     runs-on: ubuntu-latest
@@ -34,4 +33,4 @@ jobs:
 
     steps:
       - name: Deploy (simulate)
-        run: echo "Deploy successful (simulation)"
+        run: docker run --rm my-app
