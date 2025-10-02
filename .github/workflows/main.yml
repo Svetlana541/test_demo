@@ -15,8 +15,8 @@ jobs:
 
       - name: run tests
         run: |
-          pip install pytest
-          pytest -v
+          docker build -t my-app-test -f Dockerfile.test .
+          docker run --rm my-app-test
 
       - name: Deploy 
         run: docker run --rm my-app
