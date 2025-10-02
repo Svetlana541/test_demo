@@ -3,7 +3,7 @@ name: CI/CD with Docker
 on: [push]
 
 jobs:
-  workflow:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,14 +15,16 @@ jobs:
 
       - name: run tests
         run: |
-          docker build -t my-app-test -f Dockerfile.test .
-          docker run --rm my-app-test
+          pip install pytest
+          pytest -v
 
-      - name: Deploy 
-        run: docker run --rm my-app
-
-
+      - name: Deploy (simulate)
+        run: docker run --rm my-app 
 
 
 
 
+
+
+
+# должна иметь раннер и включать в себя 4 шага
