@@ -2,4 +2,6 @@ FROM my-app
 
 RUN pip install pytest
 
-CMD ["pytest", "-v" "test_app.py"]
+COPY test_app.py . 
+
+CMD ["pytest", "-v"]
